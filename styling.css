@@ -1,0 +1,137 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+header {
+  background: rgb(226, 199, 199); 
+  height: 15vh;
+  font-size: medium;
+  font-family: pt serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Changed header color, and font, for the wcag requirements-contrast*/
+}
+
+.available-h3 {
+    border-radius: 2%;
+    border-width: 2px;
+    border-color: black;
+    background-color: green;
+    border: solid;
+
+}
+.adopted-h3 {
+    border-radius: 2%;
+    border-width: 2px;
+    border-color: black;
+    background-color: rgb(136, 20, 20);
+    border: solid;
+}
+
+
+
+main {
+  display: flex;
+  height: 90vh;
+}
+
+nav {
+  flex: 1;
+  background: rgb(226, 199, 199);
+  flex-grow: 0.5;
+}
+
+article {
+  flex: 3;
+  background: rgb(156, 178, 165);
+  flex-grow: 3;
+  overflow: auto;
+}
+/* changed article color to make contrast fit wcag */
+
+article div {
+    background-color: darkkhaki;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    margin-bottom: 7.5%;
+}
+
+article div p {
+    padding: 0 15% 0 15%;
+}
+
+article img {
+    width: 30%;
+    height: 50%;
+    padding: 1% 1% 1% 1%;
+}
+
+header,
+footer,
+article,
+nav,
+aside {
+  padding: 1em;
+}
+
+@media (max-width:540px) {
+  body{
+  color: solid;
+  }
+  
+   body > main > nav {
+    display: none;
+  }
+
+  .handheld {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+  }
+}
+
+@media (min-width: 541px) {
+  .handheld {
+    display: none;
+  }
+}
+
+/* Popup class */
+   .btn {
+    background: pink;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border-style: none;
+  }
+  
+  #popUpBox{
+    width: 500px;
+    overflow: hidden;
+    background: pink;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 10px;
+    text-align: center;
+    display: none;
+  }
